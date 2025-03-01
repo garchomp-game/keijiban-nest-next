@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掲示板 - Keijiban</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>掲示板 (Keijiban)</h1>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="post-form">
+                <h2>新規投稿</h2>
+                <form id="post-form">
+                    <div class="form-group">
+                        <label for="title">タイトル:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">名前:</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">内容:</label>
+                        <textarea id="content" name="content" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">投稿する</button>
+                </form>
+            </section>
+            
+            <section class="posts">
+                <h2>投稿一覧</h2>
+                <div id="posts-container"></div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 掲示板アプリ</p>
+    </footer>
+
+    <div id="post-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="post-detail"></div>
+            <div class="comment-form">
+                <h3>コメントを追加</h3>
+                <form id="comment-form">
+                    <input type="hidden" id="post-id">
+                    <div class="form-group">
+                        <label for="comment-author">名前:</label>
+                        <input type="text" id="comment-author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-text">コメント:</label>
+                        <textarea id="comment-text" rows="3" required></textarea>
+                    </div>
+                    <button type="submit">コメントする</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
